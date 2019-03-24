@@ -24,4 +24,4 @@ Tensorflow >= 1.4.0
 
 1. `/data/ohsumed_3.txt` indicates document names, training/test split, document labels. Each line is for a document.
 
-2. `/data/corpus/ohsumed_3.txt` contains raw text of each document, each line is for the corresponding line in `/data/20ng.txt`
+2. `/data/corpus/ohsumed_3.txt` contains raw text of each document, each line is for the corresponding line in `/data/ohsumed_3.txt`
