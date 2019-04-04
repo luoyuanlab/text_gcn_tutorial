@@ -25,7 +25,7 @@ if dataset not in datasets:
 seed = random.randint(1, 200)
 tf.set_random_seed(seed)
 
-# Settings
+# Settings, default not using GPU
 os.environ["CUDA_VISIBLE_DEVICES"] = ""
 
 flags = tf.app.flags
@@ -47,8 +47,7 @@ flags.DEFINE_integer('max_degree', 3, 'Maximum Chebyshev polynomial degree.')
 # Load data
 adj, features, y_train, y_val, y_test, train_mask, val_mask, test_mask, train_size, test_size = load_corpus(
     FLAGS.dataset)
-print(adj)
-# print(adj[0], adj[1])
+# print(adj)
 features = sp.identity(features.shape[0])  # featureless
 
 print(adj.shape)
@@ -58,7 +57,7 @@ print(features.shape)
 features = preprocess_features(features)
 if FLAGS.model == 'gcn':
     support = [preprocess_adj(adj)]
-    num_supports = 1
+    num_supports = 1 # list size 1, different from Kipf
 else:
     raise ValueError('Invalid argument for model: ' + str(FLAGS.model))
 
@@ -74,7 +73,7 @@ placeholders = {
 }
 
 # Create model
-print(features[2][1])
+print(features[2][1]) # dim, note there is sparse_to_tuple in preprocess_features
 model = GCN(placeholders, input_dim=features[2][1], logging=True)
 
 # Initialize session
@@ -91,8 +90,8 @@ def evaluate(features, support, labels, mask, placeholders):
     return outs_val[0], outs_val[1], outs_val[2], outs_val[3], (time.time() - t_test)
 
 
-# Init variables
-sess.run(tf.global_variables_initializer())
+# Init variables, models.py call layers.py then call init.py
+sess.run(tf.global_variables_initializer()) 
 
 cost_val = []
 
@@ -100,10 +99,10 @@ cost_val = []
 for epoch in range(FLAGS.epochs):
 
     t = time.time()
-    # Construct feed dictionary
+    # Construct feed dictionary, same input for every epoch as we input full batch
     feed_dict = construct_feed_dict(
         features, support, y_train, train_mask, placeholders)
-    feed_dict.update({placeholders['dropout']: FLAGS.dropout})
+    feed_dict.update({placeholders['dropout']: FLAGS.dropout}) # update dropout for train, different from test 0
     # to inductive
     # Training step
     outs = sess.run([model.opt_op, model.loss, model.accuracy,

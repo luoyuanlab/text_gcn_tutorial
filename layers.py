@@ -192,7 +192,7 @@ class GraphConvolution(Layer):
                 pre_sup = self.vars['weights_' + str(i)]
             support = dot(self.support[i], pre_sup, sparse=True)
             supports.append(support)
-        output = tf.add_n(supports)
+        output = tf.add_n(supports) # get AXW
 
         # bias
         if self.bias:
