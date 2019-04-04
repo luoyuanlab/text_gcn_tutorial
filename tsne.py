@@ -3,13 +3,13 @@ from sklearn.manifold import TSNE
 from matplotlib import pyplot as plt
 import numpy as np
 
-f = open('data/20ng.train.index', 'r')
+f = open('data/ohsumed_3.train.index', 'r')
 lines = f.readlines()
 f.close()
 train_size = len(lines)
 
 
-f = open('data/20ng_shuffle.txt', 'r')
+f = open('data/ohsumed_3_shuffle.txt', 'r')
 lines = f.readlines()
 f.close()
 
@@ -23,7 +23,7 @@ for line in lines:
 
 target_names = list(target_names)
 
-f = open('data/20ng_doc_vectors_1.txt', 'r')
+f = open('data/ohsumed_3_doc_vectors.txt', 'r')
 lines = f.readlines()
 f.close()
 
@@ -39,7 +39,7 @@ label = labels[train_size:]  # int(train_size * 0.9)
 label = np.array(label)
 
 fea = TSNE(n_components=2).fit_transform(fea)
-pdf = PdfPages('20ng_gcn_doc_test_1.pdf')
+pdf = PdfPages('ohsumed_3_gcn_doc_train.pdf')
 cls = np.unique(label)
 
 # cls=range(10)
@@ -49,6 +49,7 @@ for i, f in enumerate(fea_num):
         plt.scatter(f[:, 0], f[:, 1], label=cls[i], marker='+')
     else:
         plt.scatter(f[:, 0], f[:, 1], label=cls[i])
+plt.legend()
 # plt.legend(ncol=2,  )
 # plt.legend(ncol=5,loc='upper center',bbox_to_anchor=(0.48, -0.08),fontsize=11)
 # plt.ylim([-20,35])

@@ -13,7 +13,7 @@ from sklearn.linear_model import LogisticRegression
 from sklearn import svm
 from sklearn.svm import LinearSVC
 # build corpus
-dataset = 'ag_news'
+dataset = 'ohsumed_3' # 'ag_news'
 
 # shulffing
 doc_name_list = []
