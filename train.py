@@ -14,12 +14,7 @@ import sys
 if len(sys.argv) != 2:
 	sys.exit("Use: python train.py <dataset>")
 
-datasets = ['20ng', 'R8', 'R52', 'ohsumed', 'mr', 'aclImdb', 'ag_news', 'dbpedia', 'TCMRecords', 'ohsumed_5', 'ohsumed_3']
 dataset = sys.argv[1]
-
-if dataset not in datasets:
-	sys.exit("wrong dataset name")
-
 
 # Set random seed
 seed = random.randint(1, 200)
@@ -153,7 +148,7 @@ test_doc_embeddings = outs[3][adj.shape[0] - test_size:]
 
 print(len(word_embeddings), len(train_doc_embeddings),
       len(test_doc_embeddings))
-print(word_embeddings)
+## print(word_embeddings)
 
 f = open('data/corpus/' + dataset + '_vocab.txt', 'r')
 words = f.readlines()
