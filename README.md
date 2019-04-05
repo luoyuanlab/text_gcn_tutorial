@@ -19,7 +19,7 @@ Tensorflow >= 1.4.0
 
 3. Run `python train.py ohsumed_3`
 
-# Example output:
+# Example output
 ```
 2019-04-04 22:58:26.244395: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 FMA
 Epoch: 0001 train_loss= 1.09856 train_acc= 0.41463 val_loss= 1.08209 val_acc= 0.48780 time= 29.13731
@@ -48,13 +48,16 @@ avg / total     0.9212    0.9217    0.9212      1532
 # Visualizing Documents
 Run `python tsne.py`
 
+# Example Visualization
+![Image of Ohsumed3 Tsne](https://github.com/yuanluo/text_gcn_tutorial/figure/ohsumed3_tsne.png)
+
 # Example input data
 The Ohsumed corpus is from the MEDLINE database, which is a bibliographic database of important medical literature maintained by the National Library of Medicine
 
 In this tutorial, we created a subsample of the 2,762 unique diseases abstracts from 3 categories
-C04: Neoplasms
-C10: Nervous System Diseases
-C14: Cardiovascular Diseases
+*C04: Neoplasms
+*C10: Nervous System Diseases
+*C14: Cardiovascular Diseases
 
 As we focus on single-label text classification, the documents belonging to multiple categories are excluded
 
