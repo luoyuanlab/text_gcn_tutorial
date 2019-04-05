@@ -56,6 +56,7 @@ Run `python tsne.py`
 The Ohsumed corpus is from the MEDLINE database, which is a bibliographic database of important medical literature maintained by the National Library of Medicine
 
 In this tutorial, we created a subsample of the 2,762 unique diseases abstracts from 3 categories
+
 *C04: Neoplasms
 *C10: Nervous System Diseases
 *C14: Cardiovascular Diseases
