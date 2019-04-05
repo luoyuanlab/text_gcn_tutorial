@@ -49,7 +49,8 @@ avg / total     0.9212    0.9217    0.9212      1532
 Run `python tsne.py`
 
 # Example Visualization
-![Image of Ohsumed3 Tsne](/figure/ohsumed3_tsne.png | width=500)
+<!--- ![Image of Ohsumed3 Tsne](/figure/ohsumed3_tsne.png | width=500) --->
+<img src="./figure/ohsumed3_tsne.png" width="411" height="303">
 
 # Example input data
 The Ohsumed corpus is from the MEDLINE database, which is a bibliographic database of important medical literature maintained by the National Library of Medicine
