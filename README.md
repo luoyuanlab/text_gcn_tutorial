@@ -11,6 +11,22 @@ Python 2.7 or 3.6
 
 Tensorflow >= 1.4.0
 
+# Example input data
+The <a href="http://disi.unitn.it/moschitti/corpora.htm">Ohsumed corpus</a> is from the MEDLINE database, which is a bibliographic database of important medical literature maintained by the National Library of Medicine
+
+In this tutorial, we created a subsample of the 2,762 unique diseases abstracts from 3 categories
+* C04: Neoplasms
+* C10: Nervous System Diseases
+* C14: Cardiovascular Diseases
+
+As we focus on single-label text classification, the documents belonging to multiple categories are excluded
+
+1230 train (use 10% as validation), 1532 test
+
+1. `/data/ohsumed_3.txt` indicates document names, training/test split, document labels. Each line is for a document.
+
+2. `/data/corpus/ohsumed_3.txt` contains raw text of each document, each line is for the corresponding line in `/data/ohsumed_3.txt`
+
 # Reproduing Results
 
 1. Run `python remove_words.py ohsumed_3`
@@ -52,18 +68,3 @@ Run `python tsne.py`
 <!--- ![Image of Ohsumed3 Tsne](/figure/ohsumed3_tsne.png | width=500) --->
 <img src="./figure/ohsumed3_tsne.png" width="411" height="303">
 
-# Example input data
-The Ohsumed corpus is from the MEDLINE database, which is a bibliographic database of important medical literature maintained by the National Library of Medicine
-
-In this tutorial, we created a subsample of the 2,762 unique diseases abstracts from 3 categories
-* C04: Neoplasms
-* C10: Nervous System Diseases
-* C14: Cardiovascular Diseases
-
-As we focus on single-label text classification, the documents belonging to multiple categories are excluded
-
-1230 train (use 10% as validation), 1532 test
-
-1. `/data/ohsumed_3.txt` indicates document names, training/test split, document labels. Each line is for a document.
-
-2. `/data/corpus/ohsumed_3.txt` contains raw text of each document, each line is for the corresponding line in `/data/ohsumed_3.txt`
