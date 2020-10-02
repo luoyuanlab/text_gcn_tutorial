@@ -1,6 +1,6 @@
 # Text GCN Tutorial
 
-This tutorial (currently under development) is based on the implementation of Text GCN in our paper:
+This tutorial (currently under improvement) is based on the implementation of Text GCN in our paper:
 
 Liang Yao, Chengsheng Mao, Yuan Luo. "Graph Convolutional Networks for Text Classification." In 33rd AAAI Conference on Artificial Intelligence (AAAI-19)
 
