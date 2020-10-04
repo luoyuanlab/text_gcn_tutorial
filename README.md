@@ -4,6 +4,7 @@ This tutorial (currently under improvement) is based on the implementation of Te
 
 Liang Yao, Chengsheng Mao, Yuan Luo. "Graph Convolutional Networks for Text Classification." In 33rd AAAI Conference on Artificial Intelligence (AAAI-19)
 
+<img src="./figure/TextGCN.png">
 
 # Require
 
